@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sabrea.nl — Fine Jewelry, Quietly Made</title>
+  <meta name="description" content="sabrea.nl — Minimal, hand-finished fine jewelry. Rings, necklaces, earrings and bracelets crafted for a lifetime." />
+
+  <!-- Google Fonts: Cormorant Garamond (display) + Jost (body/utility) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ CUSTOM CURSOR DOT (desktop only, purely decorative) ============ -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <span class="preloader-mark">S</span>
+  </div>
+
+  <!-- ============ HEADER / NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+
+      <a href="#home" class="logo" aria-label="sabrea.nl home">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">sabrea<span class="logo-dot">.nl</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#home" data-i18n="nav_home" class="active">Home</a>
+        <a href="#shop" data-i18n="nav_shop">Shop</a>
+        <a href="#collections" data-i18n="nav_collections">Collections</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <!-- Language Switcher -->
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-current" id="langCurrent" aria-haspopup="listbox" aria-expanded="false">
+            <span id="langLabel">EN</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox">
+            <li role="option" data-lang="en">English</li>
+            <li role="option" data-lang="fr">Français</li>
+            <li role="option" data-lang="nl">Nederlands</li>
+          </ul>
+        </div>
+
+        <button class="icon-btn" id="searchBtn" aria-label="Search">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none"><circle cx="8.2" cy="8.2" r="6.2" stroke="currentColor" stroke-width="1.3"/><path d="M13 13.2L17.5 17.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </button>
+
+        <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+          <svg width="19" height="19" viewBox="0 0 20 18" fill="none"><path d="M10 17S1.5 12.2 1.5 6.4C1.5 3.4 3.8 1.2 6.7 1.2c1.6 0 3.1.8 3.3 2.1.2-1.3 1.7-2.1 3.3-2.1 2.9 0 5.2 2.2 5.2 5.2C18.5 12.2 10 17 10 17Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          <span class="badge" id="wishlistCount">0</span>
+        </button>
+
+        <button class="icon-btn" id="cartBtn" aria-label="Cart">
+          <svg width="19" height="19" viewBox="0 0 20 19" fill="none"><path d="M1.5 1.5H3.4L4.9 12.4a1.6 1.6 0 0 0 1.6 1.4H16a1.6 1.6 0 0 0 1.6-1.3L19 5.3H4.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1.2" fill="currentColor"/><circle cx="15.5" cy="17" r="1.2" fill="currentColor"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav aria-label="Mobile Primary">
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#shop" data-i18n="nav_shop">Shop</a>
+      <a href="#collections" data-i18n="nav_collections">Collections</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2000&auto=format&fit=crop" alt="Close-up of fine gold jewelry draped over dark velvet" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content reveal">
+      <p class="eyebrow" data-i18n="hero_eyebrow">The Autumn Atelier Edit</p>
+      <h1 class="hero-title">
+        <span data-i18n="hero_title_1">Jewelry, made</span><br />
+        <em data-i18n="hero_title_2">to be noticed quietly.</em>
+      </h1>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">
+        Hand-finished in small batches. Each piece carries the mark of the hand that made it — nothing mass, nothing loud.
+      </p>
+      <a href="#collections" class="btn btn-primary">
+        <span data-i18n="hero_cta">Explore Collection</span>
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5H13M13 5L9 1M13 5L9 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span></span>
+      <p data-i18n="hero_scroll">Scroll</p>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED COLLECTIONS ============ -->
+  <section class="section collections" id="collections">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="collections_eyebrow">Featured</p>
+      <h2 data-i18n="collections_title">Collections</h2>
+    </div>
+
+    <div class="collection-grid">
+
+      <a href="#shop" class="collection-card large reveal">
+        <img src="https://images.unsplash.com/photo-1584302179602-e4c3d3fd629d?q=80&w=1400&auto=format&fit=crop" alt="Model wearing a delicate gold necklace collection" />
+        <div class="collection-glass">
+          <h3 data-i18n="col_1_title">The Lumière Line</h3>
+          <p data-i18n="col_1_sub">Necklaces &amp; pendants</p>
+          <span class="collection-link" data-i18n="col_link">Discover →</span>
+        </div>
+      </a>
+
+      <a href="#shop" class="collection-card reveal">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=1200&auto=format&fit=crop" alt="Stack of fine gold and silver rings" />
+        <div class="collection-glass">
+          <h3 data-i18n="col_2_title">Solitaire</h3>
+          <p data-i18n="col_2_sub">Rings</p>
+          <span class="collection-link" data-i18n="col_link">Discover →</span>
+        </div>
+      </a>
+
+      <a href="#shop" class="collection-card reveal">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1200&auto=format&fit=crop" alt="Pair of diamond stud earrings on dark stone" />
+        <div class="collection-glass">
+          <h3 data-i18n="col_3_title">Halo</h3>
+          <p data-i18n="col_3_sub">Earrings</p>
+          <span class="collection-link" data-i18n="col_link">Discover →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ BEST SELLERS ============ -->
+  <section class="section bestsellers" id="shop">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="best_eyebrow">Most Loved</p>
+      <h2 data-i18n="best_title">Best Sellers</h2>
+    </div>
+
+    <div class="product-grid">
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1620656798579-1984d9e87df7?q=80&w=1000&auto=format&fit=crop" alt="Thin gold ring with a single diamond" />
+          <button class="product-wish" aria-label="Add to wishlist">
+            <svg width="16" height="16" viewBox="0 0 20 18" fill="none"><path d="M10 17S1.5 12.2 1.5 6.4C1.5 3.4 3.8 1.2 6.7 1.2c1.6 0 3.1.8 3.3 2.1.2-1.3 1.7-2.1 3.3-2.1 2.9 0 5.2 2.2 5.2 5.2C18.5 12.2 10 17 10 17Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="product-tag" data-i18n="tag_new">New</span>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="prod_1_name">Aurore Solitaire Ring</h3>
+          <div class="product-rating" aria-label="Rated 4.9 out of 5">★★★★★ <span>4.9</span></div>
+          <div class="product-bottom">
+            <span class="price">€ 890</span>
+            <button class="btn-add" data-name="Aurore Solitaire Ring" data-price="890">
+              <span data-i18n="add_cart">Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=1000&auto=format&fit=crop" alt="Layered fine gold necklaces on neck" />
+          <button class="product-wish" aria-label="Add to wishlist">
+            <svg width="16" height="16" viewBox="0 0 20 18" fill="none"><path d="M10 17S1.5 12.2 1.5 6.4C1.5 3.4 3.8 1.2 6.7 1.2c1.6 0 3.1.8 3.3 2.1.2-1.3 1.7-2.1 3.3-2.1 2.9 0 5.2 2.2 5.2 5.2C18.5 12.2 10 17 10 17Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="prod_2_name">Lumière Layer Necklace</h3>
+          <div class="product-rating" aria-label="Rated 4.8 out of 5">★★★★★ <span>4.8</span></div>
+          <div class="product-bottom">
+            <span class="price">€ 1,240</span>
+            <button class="btn-add" data-name="Lumière Layer Necklace" data-price="1240">
+              <span data-i18n="add_cart">Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?q=80&w=1000&auto=format&fit=crop" alt="Minimalist gold hoop earrings" />
+          <button class="product-wish" aria-label="Add to wishlist">
+            <svg width="16" height="16" viewBox="0 0 20 18" fill="none"><path d="M10 17S1.5 12.2 1.5 6.4C1.5 3.4 3.8 1.2 6.7 1.2c1.6 0 3.1.8 3.3 2.1.2-1.3 1.7-2.1 3.3-2.1 2.9 0 5.2 2.2 5.2 5.2C18.5 12.2 10 17 10 17Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="product-tag" data-i18n="tag_limited">Limited</span>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="prod_3_name">Halo Hoop Earrings</h3>
+          <div class="product-rating" aria-label="Rated 5 out of 5">★★★★★ <span>5.0</span></div>
+          <div class="product-bottom">
+            <span class="price">€ 610</span>
+            <button class="btn-add" data-name="Halo Hoop Earrings" data-price="610">
+              <span data-i18n="add_cart">Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-media">
+          <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?q=80&w=1000&auto=format&fit=crop" alt="Delicate gold chain bracelet on wrist" />
+          <button class="product-wish" aria-label="Add to wishlist">
+            <svg width="16" height="16" viewBox="0 0 20 18" fill="none"><path d="M10 17S1.5 12.2 1.5 6.4C1.5 3.4 3.8 1.2 6.7 1.2c1.6 0 3.1.8 3.3 2.1.2-1.3 1.7-2.1 3.3-2.1 2.9 0 5.2 2.2 5.2 5.2C18.5 12.2 10 17 10 17Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="product-info">
+          <h3 data-i18n="prod_4_name">Ondine Chain Bracelet</h3>
+          <div class="product-rating" aria-label="Rated 4.7 out of 5">★★★★★ <span>4.7</span></div>
+          <div class="product-bottom">
+            <span class="price">€ 540</span>
+            <button class="btn-add" data-name="Ondine Chain Bracelet" data-price="540">
+              <span data-i18n="add_cart">Add to Cart</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="section categories">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="cat_eyebrow">Shop By</p>
+      <h2 data-i18n="cat_title">Category</h2>
+    </div>
+
+    <div class="category-grid">
+      <a href="#shop" class="category-card reveal">
+        <img src="https://images.unsplash.com/photo-1587467512961-120760940315?q=80&w=900&auto=format&fit=crop" alt="Rings" />
+        <span data-i18n="cat_rings">Rings</span>
+      </a>
+      <a href="#shop" class="category-card reveal">
+        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=900&auto=format&fit=crop" alt="Necklaces" />
+        <span data-i18n="cat_necklaces">Necklaces</span>
+      </a>
+      <a href="#shop" class="category-card reveal">
+        <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?q=80&w=900&auto=format&fit=crop" alt="Earrings" />
+        <span data-i18n="cat_earrings">Earrings</span>
+      </a>
+      <a href="#shop" class="category-card reveal">
+        <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?q=80&w=900&auto=format&fit=crop" alt="Bracelets" />
+        <span data-i18n="cat_bracelets">Bracelets</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop" alt="Jeweler's hands finishing a gold ring at a workbench" />
+      <div class="about-badge">
+        <span class="about-badge-num">18</span>
+        <span data-i18n="about_badge">years of craft</span>
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <p class="eyebrow" data-i18n="about_eyebrow">Our Story</p>
+      <h2 data-i18n="about_title">Made by hand, worn for a lifetime.</h2>
+      <p data-i18n="about_p1">
+        sabrea.nl began at a small workbench in the Netherlands, where every piece was — and still is — shaped, set and polished by hand. We work with recycled gold and ethically sourced stones, in runs small enough that a single jeweler sees a piece from sketch to box.
+      </p>
+      <p data-i18n="about_p2">
+        We don't chase trends. We build quiet, considered pieces meant to be worn daily and passed down eventually — jewelry as an heirloom, not an impulse.
+      </p>
+      <div class="about-stats">
+        <div>
+          <strong>12K+</strong>
+          <span data-i18n="about_stat1">Pieces crafted</span>
+        </div>
+        <div>
+          <strong>4.9/5</strong>
+          <span data-i18n="about_stat2">Average rating</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span data-i18n="about_stat3">Hand-finished</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn-outline">
+        <span data-i18n="about_cta">Our Atelier</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter">
+    <div class="newsletter-glass reveal">
+      <p class="eyebrow" data-i18n="news_eyebrow">Stay Close</p>
+      <h2 data-i18n="news_title">Be first to new arrivals</h2>
+      <p data-i18n="news_sub">One email a month. New pieces, atelier notes, private previews. No noise.</p>
+
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="your@email.com" data-i18n-placeholder="news_placeholder" required />
+        <button type="submit" class="btn btn-primary">
+          <span data-i18n="news_cta">Subscribe</span>
+        </button>
+      </form>
+      <p class="newsletter-msg" id="newsletterMsg" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="contact_eyebrow">Get in Touch</p>
+      <h2 data-i18n="contact_title">Visit or write to us</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-item">
+        <h4 data-i18n="contact_atelier">Atelier</h4>
+        <p>Keizersgracht 241, Amsterdam</p>
+      </div>
+      <div class="contact-item">
+        <h4 data-i18n="contact_email">Email</h4>
+        <p>hello@sabrea.nl</p>
+      </div>
+      <div class="contact-item">
+        <h4 data-i18n="contact_phone">Phone</h4>
+        <p>+31 20 123 4567</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="#home" class="logo footer-logo">
+        <span class="logo-mark">S</span>
+        <span class="logo-text">sabrea<span class="logo-dot">.nl</span></span>
+      </a>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#home" data-i18n="nav_home">Home</a>
+        <a href="#shop" data-i18n="nav_shop">Shop</a>
+        <a href="#collections" data-i18n="nav_collections">Collections</a>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="icon-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.4"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Pinterest" class="icon-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M9 18c1-3 1.6-5.4 2-7.2M12 6.5c3 0 4.7 1.8 4.7 4.1 0 2.8-1.4 5-3.8 5-.9 0-1.6-.5-1.9-1.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="icon-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a3.2 3.2 0 1 1-2.6-3.15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M14 3c.4 2.4 2 4 4.6 4.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> sabrea.nl — <span data-i18n="footer_rights">All rights reserved.</span></p>
+      <p class="footer-fine" data-i18n="footer_fine">Handcrafted in the Netherlands.</p>
+    </div>
+  </footer>
+
+  <!-- ============ MINI CART DRAWER ============ -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-head">
+      <h3 data-i18n="cart_title">Your Cart</h3>
+      <button id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" id="cartEmpty" data-i18n="cart_empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span data-i18n="cart_total">Total</span>
+        <span id="cartTotal">€ 0</span>
+      </div>
+      <button class="btn btn-primary cart-checkout" data-i18n="cart_checkout">Checkout</button>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
